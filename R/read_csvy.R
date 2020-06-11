@@ -249,7 +249,7 @@ add_dataset_metadata <- function(data_frame, metadata_list) {
         attr(data_frame, "sources") <- metadata_list[["sources"]]
     }
     if ("licenses" %in% names(metadata_list)) {
-        attr(data_frame, "sources") <- metadata_list[["licenses"]]
+        attr(data_frame, "licenses") <- metadata_list[["licenses"]]
     }
     return(data_frame)
 }
