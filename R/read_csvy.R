@@ -223,6 +223,10 @@ add_variable_metadata <- function(data, fields, try_to_factorize = "never") {
         if ("labels" %in% names(fields_this_col) && (!"labels" %in% attributes(data[[i]]))) {
             attr(data[[i]], "labels") <- fields_this_col[["labels"]]
         }
+        ## add 'columnType' (not in schema but useful)
+        if ("columnType" %in% names(fields_this_col) && (!"columnType" %in% attributes(data[[i]]))) {
+            attr(data[[i]], "columnType") <- fields_this_col[["columnType"]]
+        }
         rm(fields_this_col)
     }
     
